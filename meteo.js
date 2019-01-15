@@ -23,20 +23,4 @@ function init_page() {
     
     xhr.open("GET", get_url(), true)
     xhr.send()
-<<<<<<< HEAD
 }
-© 2019 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-=======
-}
->>>>>>> ceea7f8bcfae42249393d6c883c658266c6097ea
