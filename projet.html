@@ -1,6 +1,40 @@
+<!DOCTYPE html>
+<?php
+// http://www.example.org/ajax.php
+if (!isset($_SERVER['HTTP_ORIGIN'])) {
+    // This is not cross-domain request
+    exit;
+}
+
+$wildcard = FALSE; // Set $wildcard to TRUE if you do not plan to check or limit the domains
+$credentials = FALSE; // Set $credentials to TRUE if expects credential requests (Cookies, Authentication, SSL certificates)
+$allowedOrigins = array('http://zinoui.com', 'http://jsfiddle.net');
+if (!in_array($_SERVER['HTTP_ORIGIN'], $allowedOrigins) && !$wildcard) {
+    // Origin is not allowed
+    exit;
+}
+$origin = $wildcard && !$credentials ? '*' : $_SERVER['HTTP_ORIGIN'];
+
+header("Access-Control-Allow-Origin: " . $origin);
+if ($credentials) {
+    header("Access-Control-Allow-Credentials: true");
+}
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Origin");
+header('P3P: CP="CAO PSA OUR"'); // Makes IE to support cookies
+
+// Handling the Preflight
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') { 
+    exit;
+}
+
+// Response
+header("Content-Type: application/json; charset=utf-8");
+?>
 <html lang="fr" >
     <head>
         <title>M&eacute;t&eacute;o du jour</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -8,12 +42,12 @@
         <meta charset="utf-8"> 
     </head>
     <body onload="init_page()">
-        <div class="row"></div>
-        <div class="jumbotron text-center">
+        <div class="row "></div>
+        <div class="jumbotron jumbotron-fluid text-center">
             <h1>Application M&eacute;t&eacute;o</h1>
         </div>
         <div class="navbar" >
-          <div class="container"> 
+          <div class="container-fluid"> 
             <div class="row">
                 <div class="col-md-4 col-md-offset-4 " >
                 <div id="demo">
@@ -28,7 +62,6 @@
           </div>
         </div>
         <div class="container-fluid text-center"  >    
-            <div class="row content">
               <div class="row">
                     <div class="col-md-4 col-sm-4 col-sm-offset-4 col-sm-offset-4">
                         
@@ -52,16 +85,40 @@
                               <h1 id="v"></h1>
                               <P id="meteo"></P>
                               <p id="url" ></p>
-                              <img id="icon" src="">
+                              <img id="icon" src=""><br>
+                              <i class="fas fa-wind wind" ></i>
                             </div>
                     </div>
-                        
+                    <div class="row">
+                      <div class="col-md-8 col-md-offset-2">
+                      <table class="table thead-striped ">
+                        <thead>
+                          <tr>
+                            <th scope="col">Ville</th>
+                            <th scope="col">Dates heurs</th>
+                            <th scope="col">Température</th>
+                            <th scope="col">Vitesse du vent</th>
+                            <th scope="col" >Direction du vent</th>
+                            <th scope="col">Humiditél</th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody id="showWeatherForcast">
+                         
+                        </tbody>
+                      </table>
+                    </div>
+                    </div>
 
-                    
+                    <div id='showWeatherForcast'></div>
           
 
+          <div class="row">
+                  <footer class="footer fixed-buttom clear-top">
+                      <p>Applications méteo version d'essai</p>
+                  </footer>
           </div>
-          
+          </div>
           <script src="meteo.js"></script>
           <script type="text/javascript">
         
