@@ -1,23 +1,335 @@
-#url{
-    color: red;
+html {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-image: url("background.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#id_titre {
+    text-align: center;
+    margin: 15px 0px;
+}
+
+#id_options {
+    font-size: 1.3em;
+    margin: 15px 0px;
+}
+
+#id_ville {
+    text-align: center;
+    margin: 15px 0px;
+}
+
+#id_nomville {
+    font-size: 1em;
+    text-align: center;
+    color: #222;
+}
+
+#id_nomville label {
 
 }
-#meteo{
-    color: white;
+
+#id_boutonville {
+    font-size: 0.8em;
+    padding: 5px 10px;
+    border: none;
+    background: rgb(245, 224, 104);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-body{
-    background: #4829b2;
+
+#id_boutonville:hover {
+    cursor: pointer;
+    background: rgb(243, 228, 142);
 }
-form{
-    color: white
+
+#id_geolocalisation {
+    text-align: center;
+    margin: 15px 0px;
 }
-.wind{
+
+#id_geolocalisation label {
+}
+
+#id_boutongeolocalisation {
+    font-size: 0.8em;
+    padding: 5px 10px;
+    border: none;
+    background: rgb(245, 224, 104);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#id_boutongeolocalisation:hover {
+    cursor: pointer;
+    background: rgb(243, 228, 142);
+}
+
+#id_erreurlocalisation {
+
+}
+
+#id_optionel {
+    text-align: center;
+    margin: 15px 0px;
+}
+
+#id_optionel label {
+
+}
+
+#id_nombrejours {
+    font-size: 0.8em;
+    border: none;
+}
+
+#id_meteo {
+    text-align: center;
+}
+
+.titremeteoville {
+    margin: 15px 0px;
+}
+
+.meteojour {
+/*    display: inline-flex;
+    align-items: center;*/
+}
+
+.meteojour .detailsjour {
+/*    width: 100% !important;
+    padding: 5px;*/
+}
+
+.maintenant {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    box-shadow: 0px 0px 25px 0px rgba(230,230,230,1);
+    padding: 5px;
+    display: inline-block;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    height: 200px;
+}
+
+.datemaintenant {
+    display: block;
+    float: left;
+}
+
+.heuremaintenant {
+    display: block;
+    float: right;
+}
+
+.descriptionmaintenant {
+    display: block;
+    clear: both;
+}
+
+.iconmaintenant {
+    display: block;
+    float: left; 
+}
+
+.temperaturemaintenant {
+    display: block;
+    float: right;
+    font-size: 1em;
+}
+
+.pressionmaintenant {
+    display: block; 
+    clear: both;
+}
+
+.humiditemaintenant {
+    display: block; 
+}
+
+.ventmaintenant {
+    display: block; 
+}
+
+.boutonafficherdetails {
+
+}
+
+.detailsjour {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    box-shadow: 0px 0px 25px 0px rgba(230,230,230,1);
+    padding: 5px;
+    display: inline-block;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    height: 200px;
+
+/*    width: 50%;
+    padding-top: 20px;
+    padding-bottom: 20px;*/
+}
+
+.datedj {
+    display: block;
+    float: left;
+}
+
+.heuredj {
+    display: block;
+    float: right; 
+}
+
+.descriptiondj {
+    display: block; 
+    clear: both;
+}
+
+.icondj {
+    display: block;
+    float: left;
+}
+
+.temperaturedj {
+    display: block;
+    float: right;
+}
+
+.pressiondj {
+    display: block;
+    clear: both;
+}
+
+.humiditedj {
+    display: block; 
+}
+
+.ventdj {
+    display: block; 
+}
+
+.fermerdetails {
+
+}
+
+.boutonfermerdetails {
+
+}
+
+.previsions {
+    border: 2px solid black;
+    display: flex;
+    margin-inline-start: 30px;
+    justify-content: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: 50%;
+    margin: auto;
+}
+
+.titreprevisions {
+
+}
+
+.previsionsjour {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    box-shadow: 0px 0px 25px 0px rgba(230,230,230,1);
+    padding: 5px;
+    display: inline-block;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    height: 200px;
+}
+
+.jour {
+/*    margin-top: 50px;
+    margin-bottom: 10px;
+
+    box-shadow: 0px 0px 25px 0px rgba(230,230,230,1);
+    padding: 5px;
+    display: inline-block;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    height: 200px;*/
+}
+
+.datejour {
+    display: block; 
+    float: left;
+}
+
+.heurejour {
+    display: block;
+    float: right;
+}
+
+.descriptionjour {
+    display: block;
+    clear: both; 
+}
+
+.iconjour {
+    display: block;
+    float: left; 
+}
+
+.temperaturejour {
+    display: block;
+    float: right;
+}
+
+.pressionjour {
+    display: block;
+    clear: both; 
+}
+
+.humiditejour {
+    display: block; 
+}
+
+.ventjour {
+    display: block; 
+}
+
+.details {
+    border: 2px solid black;
+    /*display: flex;*/
+    /*margin-inline-start: 30px;*/
+    justify-content: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    width: 50%;
+    left: 25%;
+    top: 10px;
+    height: auto;
+
+    /*margin: 0px auto;*/
+    background-image: url("background.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+#id_details0, #id_details1, #id_details2, #id_details3 ,#id_details4 ,#id_details5  {
     display: none;
 }
-.footer {
-    margin-top: 150px; /* negative value of footer height */
-    height: 150px;
-    clear:both;
-    padding-top:20px;
-    background: white;
-  } 
+
+#id_footer {
+    text-align: center;
+    margin-top: 50px;
+}
