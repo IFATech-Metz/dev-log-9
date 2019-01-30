@@ -1,13 +1,52 @@
 <html>
     <head>
-        <title>Météo du jour</title>
-        <script src="meteo.js"></script>
+        <meta charset="utf-8">
+        <title>Météo</title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body onload="init_page()">
-        <h1>Application M&eacute;t&eacute;o</h1>
-        <div id="meteo">
-
+    <body>
+        <div id="id_header">
+            <div id="id_titre">
+                <h1>Application Météo</h1>
+            </div>
+            <div id="id_options">
+                <div id="id_ville">
+                    <label for="id_nomville">Saisir la ville : </label>
+                    <input type="text" id="id_nomville" placeholder="Ville">
+                    <label for="id_nomville"> et </label>
+                    <button id="id_boutonville" type="button" onclick="getMeteo('ville')">Cliquer ici !</button>
+                </div>
+                <div id="id_geolocalisation">
+                    <label for="id_boutongeolocalisation">Ou bien </label>
+                    <button id="id_boutongeolocalisation" type="button" onclick="getMeteo('geo')">Cliquer là !</button>
+                    <label for="id_boutongeolocalisation"> Pour géolocaliser.</label>
+                    <span id="id_erreurlocalisation"></span>
+                </div>
+                <div id="id_optionel">
+                    <label for="id_nombrejours">Optionel ! Prévisions pour </label>
+                    <select id="id_nombrejours">
+                        <option value="6" selected>5</option>
+                        <option value="7">6</option>
+                        <option value="8">7</option>
+                        <option value="9">8</option>
+                        <option value="10">9</option>
+                        <option value="11">10</option>
+                        <option value="12">11</option>
+                        <option value="13">12</option>
+                        <option value="14">13</option>
+                        <option value="15">14</option>
+                        <option value="16">15</option>
+                    </select>
+                    <label for="id_nombrejours"> jours.</label>
+                </div>
+            </div>
         </div>
+        <div id="id_meteo">
+        </div>
+        <div id="id_footer">
+            <span>Application météo réalisée par Soufienne, Guillaume et Frank.</span>
+            <span>Tous droits réservés. Copyright 2019.</span>
+        </div>
+        <script src="meteo.js"></script>
     </body>
 </html>
