@@ -166,7 +166,7 @@ function HeuresPourTest(expression) {
 }
 
 function AfficherDetails(idBalise) {
-    document.getElementById(idBalise).style.display = "block";
+    document.getElementById(idBalise).style.display = "flex";
 }
 
 function FermerDetails(idBalise) {

@@ -308,8 +308,8 @@ body {
 
 .details {
     border: 2px solid black;
-    display: flex;
-    margin-inline-start: 30px;
+    /*display: flex;*/
+    /*margin-inline-start: 30px;*/
     justify-content: flex;
     flex-wrap: wrap;
     position: fixed;
@@ -326,7 +326,7 @@ body {
 
 }
 #id_details0, #id_details1, #id_details2, #id_details3 ,#id_details4 ,#id_details5  {
-    /*margin: auto;*/
+    display: none;
 }
 
 #id_footer {
